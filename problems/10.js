@@ -7,7 +7,21 @@
  * @example "abcdef" -> "ABCdef"
 */
 function problem(str) {
-    return null;
+    if (str.length % 2 == 0)
+    {
+        let middle = str.length/2
+        let firstHalf = str.substr(0, middle)
+        let secondHalf = str.substr(middle, str.length)
+        return modString = firstHalf.toUpperCase() + secondHalf.toLowerCase();
+        
+    }else
+    {
+        let middle = str.length/2
+        let extraSecondHalf = str.length - middle
+        let firstHalf = str.substr(0, middle)
+        let secondHalf = str.substr(extraSecondHalf, str.length)
+        return modString = firstHalf.toUpperCase() + secondHalf.toLowerCase();
+    }
 }
 
 const tests = [

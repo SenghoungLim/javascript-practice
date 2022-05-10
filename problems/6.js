@@ -7,7 +7,12 @@
  * @example [1, 2, 3] -> 6
 */
 function problem(numbers) {
-    return null;
+    let result = 0
+    for (let x = 0; x < numbers.length; x++)
+    {
+        result += numbers[x];
+    }
+    return result;
 }
 
 const tests = [

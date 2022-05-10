@@ -8,12 +8,22 @@
  * @example "racecar" -> true
 */
 function problem(str) {
-    return null;
+    let lowercaseStr = str.toLowerCase().split(' ').join('');
+    let compareStr = str.toLowerCase().split('').reverse().join('').split(' ').join('');
+
+    if (lowercaseStr == compareStr)
+    {
+        return true;
+    }else 
+    {
+        return false;
+    }
+    
 }
 
 const tests = [
     ["racecar", true],
-    ["icssc", false],
+    ["icssc", false], 
     ["dont nod", true],
     ["Was it a cat I saw", true],
     ["how are you", false]

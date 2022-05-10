@@ -7,7 +7,20 @@
  * @example [{name: "Chase", grade: 89}, {name: "Raman", grade: 92}, {name: "Peter", grade: 100}] -> ["Peter", "Raman"]
 */
 function problem(students) {
-    return null;
+   
+    //Getting students who have a grade above 90
+    const above90 = students.filter(function(item){
+        return item.grade > 90;
+    })
+    //Getting the names of above 90 students
+    getName = above90.map(function(item)
+    {
+        return item.name;
+    })
+    //Sort the name in alphabetical order
+    getName.sort();
+    return getName;
+   
 }
 
 const tests = [
