@@ -7,19 +7,29 @@
  * @example [3,2,3] -> 3
 */
 function problem(numbers) {
-    
-    // for (let i = 0; i < numbers.length; i++)
-    // {
-    //     let count = 0;
-    //     for (let j =0; j < numbers.length; j++)
-    //     {
-    //         if(numbers[i] == numbers[j])
-    //         {
-    //             count++;
-    //         }
-    //     }
-    // }
-
+    let maxCount = 0;
+    let majorityNumberIndex = 0;
+    for (let i = 0; i < numbers.length; i++)
+    {
+        for (let j =0; j < numbers.length; j++)
+        {
+            let count = 0;
+            if(numbers[i] == numbers[j])
+            {
+                count++;
+            }
+            if (count > maxCount)
+            {
+                maxCount = count;
+                majorityNumberIndex = i;
+            }
+        }
+    }
+    if (maxCount >= numbers.length/2)
+    {
+        return numbers[majorityNumberIndex];
+    }
+    return numbers[majorityNumberIndex]
 }
 
 const tests = [

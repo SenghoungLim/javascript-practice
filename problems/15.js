@@ -1,7 +1,7 @@
 /**
  * Problem 15: FizzBuzz
  * 
- * Given a number, return a array that counts up to that number BUT
+ * Given a number, return an array that counts up to that number BUT
  *  If a number is divisible by 3, replace it with "Fizz",
  *  If a number is divisible by 5, replace it with "Buzz",
  *  If a number is divisible by 3 and 5, replace it with "FizzBuzz"
@@ -11,27 +11,29 @@
  * @example 15 -> [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"]
 */
 function problem(number) {
-    for (let i = 1; i <= number.length; i++)
+    let array = []
+    for (let i = 1; i <= number; i++)
     {
-        if(i % 3 == 0)
+      
+        if ( i % 3 == 0 && i % 5 == 0)
         {
-            number[i].replace(i, "Fizz");
+            array.push('FizzBuzz');
+        }
+        else if(i % 3 == 0)
+        {
+            array.push('Fizz');
         }
         else if (i % 5 == 0)
         {
-            number[i].replace(i, "Buzz");
-        }
-        else if ( i % 3 && i % 5)
-        {
-            number[i].replace(i, "FizzBuzz");
+            array.push('Buzz');
         }
         else{
-            number[i];
+            array.push(i);
         }
-        return number;
     }
+    return array;
+   
 }
-
 const tests = [
     [3, [1, 2, "Fizz"]],
     [5, [1, 2, "Fizz", 4, "Buzz"]],
